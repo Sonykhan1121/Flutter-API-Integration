@@ -15,16 +15,16 @@ class _HomepageState extends State<Homepage> {
   String test="Testing....";
 
   Future<void> fetchData() async {
-    final url = Uri.parse('https://jsonplaceholder.typicode.com/todos/2');
+    final url = Uri.parse('http://universities.hipolabs.com/search?country=bangladesh');
     final response =await http.get(url);
 
-    print('status : ${response.statusCode}');
+    print('status : ${response.runtimeType}');
     // print("api ${response.body}");
-    final jsondata =jsonDecode(response.body);
-    print('api  : ${jsondata.runtimeType}');
-    setState(() {
-      test = jsondata['title'];
-    });
+    final jsondata =jsonDecode(response.body)  as List;
+   setState(() {
+     test = jsondata[0].toString();
+   });
+
 
   }
 

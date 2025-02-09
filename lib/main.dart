@@ -1,6 +1,8 @@
 import 'package:api_integration/homepage.dart';
 import 'package:flutter/material.dart';
 
+import 'list_builder.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -16,7 +18,8 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Homepage(),
+      debugShowCheckedModeBanner: false,
+      home: ListBuilder(),
     );
   }
 }
